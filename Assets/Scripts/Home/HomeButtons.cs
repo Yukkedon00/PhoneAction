@@ -1,12 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-using UniRx;
-using UniRx.Triggers;
-
-using UnityEngine.SceneManagement;
+using R3;
 
 public class HomeButtons : MonoBehaviour
 {

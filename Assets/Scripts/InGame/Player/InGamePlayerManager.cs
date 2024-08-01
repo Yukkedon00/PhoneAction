@@ -1,10 +1,8 @@
 using Cysharp.Threading.Tasks;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using InGame.Player.Actions;
 using InGame.Player.Model;
-using UniRx;
+using R3;
 using UnityEngine;
 
 public class InGamePlayerManager : MonoBehaviour
@@ -16,8 +14,8 @@ public class InGamePlayerManager : MonoBehaviour
     private PlayerEntity _playerEntity;
 
     private Subject<GameObject> ready = new Subject<GameObject>();
-    public IObservable<GameObject> readyObservable => ready;
-
+    public Observable<GameObject> readyObservable => ready;
+    
     bool isCompleteLoad = false;
     
 
@@ -27,6 +25,7 @@ public class InGamePlayerManager : MonoBehaviour
             (_ =>
             {
                 isCompleteLoad = true;
+                playerMover.SetCanAction();
             });
 
         _playerEntity = new PlayerEntity(new Vector3(0, 0, 0), new RollingAction());

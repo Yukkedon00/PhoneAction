@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UniRx;
+using R3;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,7 +10,7 @@ public class BallController : MonoBehaviour
     private Vector3 toPosition = Vector3.zero;
 
     private Subject<Unit> onBreakBallSubject = new Subject<Unit>();
-    public IObservable<Unit> OnBreakBall => onBreakBallSubject;
+    public Observable<Unit> OnBreakBall => onBreakBallSubject;
 
     public void Initialize(Transform player)
     {

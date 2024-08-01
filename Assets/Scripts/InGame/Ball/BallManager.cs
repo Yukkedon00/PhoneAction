@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Cysharp.Threading.Tasks;
-using UniRx;
+using R3;
 using UnityEngine;
 
 public class BallManager : MonoBehaviour

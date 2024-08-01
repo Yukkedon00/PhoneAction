@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UniRx;
+using R3;
 using UnityEngine;
 
 public class BodyController : MonoBehaviour

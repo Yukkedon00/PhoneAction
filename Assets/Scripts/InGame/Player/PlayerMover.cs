@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 using InGame.Player.Actions;
-using UniRx;
+using R3;
 using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
@@ -10,13 +10,14 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private Transform cameraFocus;
 
     private const float defultSpeed = 5f;
-    private bool canAction = true;
+    private bool canAction;
 
     private IAction _action = new RollingAction();
-    
+
     private void Awake()
     {
         screenPad.OnClickActionButton
+            .Where(_ => canAction)
             .Subscribe(_ =>
             {
                 _action.PlayAction(moveParent).Forget();
@@ -31,11 +32,10 @@ public class PlayerMover : MonoBehaviour
             return;
         }
         moveParent.position += new Vector3(Time.deltaTime * defultSpeed * screenPad.InputDt.x, 0, Time.deltaTime * defultSpeed * screenPad.InputDt.y);
-        //Debug.Log(moveParent.transform.position);
     }
-
-    public async UniTask RoringCharaAsync()
+    
+    public void SetCanAction()
     {
-        
+        canAction = true;
     }
 }

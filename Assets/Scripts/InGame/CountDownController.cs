@@ -1,10 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using Cysharp.Threading.Tasks;
 using TMPro;
-using UniRx;
+using R3;
 using UnityEngine;
 
 public class CountDownController : MonoBehaviour
@@ -14,7 +10,7 @@ public class CountDownController : MonoBehaviour
     private float currentTimer;
 
     private Subject<Unit> onEndTimerSubject = new Subject<Unit>();
-    public IObservable<Unit> OnEndTImerAsObservable => onEndTimerSubject;
+    public Observable<Unit> OnEndTImerAsObservable => onEndTimerSubject;
     
     public IEnumerator CountDownCoroutine()
     {

@@ -1,5 +1,5 @@
 using System;
-using UniRx;
+using R3;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +16,7 @@ public sealed class ScreenPad : MonoBehaviour
 
     public Vector2 InputDt => inputDt;
 
-    public IObservable<Unit> OnClickActionButton => actionButton.OnClickAsObservable();
+    public Observable<Unit> OnClickActionButton => actionButton.OnClickAsObservable();
 
     private void Start()
     {
