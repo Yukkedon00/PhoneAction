@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class BodyController : MonoBehaviour
 {
-
     public readonly ReactiveProperty<bool> IsDeadPlayer = new ReactiveProperty<bool>(false);
 
     private void OnTriggerEnter(Collider other)

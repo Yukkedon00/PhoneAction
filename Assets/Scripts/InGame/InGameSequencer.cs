@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using R3;
@@ -11,10 +12,16 @@ public class InGameSequencer : MonoBehaviour
     {
         bodyController.IsDeadPlayer.Subscribe(x =>
         {
-            if (x) 
+            if (x)
             {
                 SceneManager.LoadScene("Home");
             }
         }).AddTo(this);
     }
+
+    private async UniTask ResultAsync()
+    {
+        
+    }
+
 }

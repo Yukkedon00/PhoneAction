@@ -17,11 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 881cca1722270104fa62ffcb1e8df500
   m_SerializeEntries:
-  - m_GUID: 494d6c8690c724b42b003cb39e457afb
-    m_Address: PRF_ItemList
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eca7f16df7397f3449631236bfff23c4
     m_Address: PRB_unitychan
     m_ReadOnly: 0
